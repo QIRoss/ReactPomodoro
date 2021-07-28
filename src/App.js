@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-// Components imports:
+
 import Break from "./components/Break";
 import Session from "./components/Session";
 import Timer from "./components/Timer";
-// Audio import:
+
 import alarmBeep from "./sounds/Electronic_Beeping_Alarm_Clock.mp3";
-// Icons imports:
+
 import {
   AiOutlinePlayCircle,
   AiOutlinePauseCircle,
@@ -14,8 +14,8 @@ import {
 } from "react-icons/ai";
 
 function App() {
-  const [breakTime, setBreakTime] = useState(300); // 300/60 = 5 minutes
-  const [sessionTime, setSessionTime] = useState(1500); // 1500/60 = 25 minutes
+  const [breakTime, setBreakTime] = useState(300);
+  const [sessionTime, setSessionTime] = useState(1500);
   const [timeLeft, setTimeLeft] = useState(sessionTime);
   const [isRunning, setIsRunning] = useState(false);
   const [status, setStatus] = useState(true);
@@ -52,7 +52,6 @@ function App() {
     }
   }, [isRunning, timeLeft, breakTime, sessionTime, status]);
 
-  // Buttons handlers
   const handleStartStopClick = () => {
     setIsRunning(!isRunning);
   };
